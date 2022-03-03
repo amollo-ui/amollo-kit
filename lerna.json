@@ -1,0 +1,28 @@
+{
+  "packages": [
+    "packages/*",
+    "packages/@helpers/*",
+    "workspace/*",
+    "workspace/@wiki/*"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "includeMergedTags": true,
+  "useWorkspaces": true,
+  "ignoreChanges": ["**/__(fixtures|tests|specs|mocks)__/**", "**/*.(md|txt)"],
+  "command": {
+    "version": {
+      "allowBranch": ["master", "release/*"],
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "exact": true,
+      "message": "release: publish"
+    },
+    "bootstrap": {
+      "hoist": true
+    },
+    "ignoreChanges": [
+      "**/*.md"
+    ]
+  }
+}

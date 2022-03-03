@@ -1,0 +1,55 @@
+{
+  "name": "amollo-kit",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "amollo-ui",
+    "email": "amolloui@gmail.com"
+  },
+  "homepage": "https://github.com/amollo-ui/amollo-kit#readme",
+  "bugs": {
+    "url": "https://github.com/amollo-ui/amollo-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amollo-ui/amollo-kit.git"
+  },
+  "engines": {
+    "node": ">=16.x",
+    "npm": ">=8.x",
+    "yarn": ">=2.x"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/@helpers/*",
+      "workspace/*",
+      "workspace/@wiki/*"
+    ]
+  },
+  "installConfig": {
+    "hoistingLimits": [
+      "workspace/*",
+      "workspace/@wiki/*"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "yarn workspaces foreach -pt run lint",
+    "versionup": "sh ./shell/versionup"
+  },
+  "devDependencies": {
+    "@amollo-lint/commitlint-plugin-scope-ws": "^1.1.0",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.3.4"
+  },
+  "packageManager": "yarn@3.1.1"
+}

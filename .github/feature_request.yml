@@ -1,0 +1,31 @@
+name: "Feature Request"
+description: "I have a specific suggestion!"
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for introducing the new feature! Please fill out this form.
+  - type: checkboxes
+    id: input1
+    attributes:
+      label: "💻"
+      options:
+        - label: Would you like to work on this feature?
+  - type: dropdown
+    attributes:
+      label: Package name
+      options:
+        - components-override
+  - type: textarea
+    attributes:
+      label: What problem are you trying to solve?
+      description: |
+        A concise description of what the problem is.
+      placeholder: |
+        I have an issue when [...]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the solution you'd like
+    validations:
+      required: true

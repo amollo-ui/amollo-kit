@@ -1,5 +1,8 @@
 # components-override
 
+[![MIT License][license-image]][LICENSE]
+[![npm version][npm-img]][npm]
+
 > Reusable react components with the overrides pattern
 
 The template for use in react components was implemented from an article by [David Schnurr](https://dschnurr.medium.com/better-reusable-react-components-with-the-overrides-pattern-9eca2339f646). For good experience, use it with typescript.
@@ -83,3 +86,8 @@ Component call:
         }}
     />
 ```
+
+[license-image]: https://img.shields.io/npm/l/format-message.svg
+[LICENSE]: https://github.com/format-message/format-message/blob/master/LICENSE-MIT
+[npm-img]: https://img.shields.io/npm/v/@amollo-kit/components-override.svg?style=flat
+[npm]: https://www.npmjs.com/package/@amollo-kit/components-override

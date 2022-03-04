@@ -1,0 +1,7 @@
+{
+    "extends": "@amollo-lint/eslint-config-ts",
+    "parserOptions": {
+        "project": "tsconfig.json"
+    },
+    "ignorePatterns": ["dist", "node_modules"]
+}

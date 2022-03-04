@@ -1,0 +1,55 @@
+{
+  "name": "@amollo-kit/components-override",
+  "scopeCommitName": "@helpers/c_override",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "",
+  "author": {
+    "name": "amollo-ui",
+    "email": "amolloui@gmail.com"
+  },
+  "keywords": [
+    "amollo",
+    "override",
+    "components-override",
+    "react-override"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/components-override.esm.js",
+  "browser": "dist/components-override.esm.js",
+  "types": "dist/@types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/amollo-ui/amollo-kit/tree/master/packages/@helpers/components-override#readme",
+  "bugs": {
+    "url": "https://github.com/amollo-ui/amollo-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amollo-ui/amollo-kit.git"
+  },
+  "scripts": {
+    "lint": "eslint \"./**/*.{js,ts,jsx,tsx}\"",
+    "lint:fix": "yarn lint --fix",
+    "prepublishOnly": "yarn lint:fix && yarn lint && yarn build",
+    "build": "rimraf dist && tsdx build --format es,cjs --entry lib/index.ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.x"
+  },
+  "devDependencies": {
+    "@amollo-lint/eslint-config-ts": "^2.1.0",
+    "@types/react": "^17.0.39",
+    "eslint": "^8.10.0",
+    "rimraf": "^3.0.2",
+    "tsdx": "^0.14.1",
+    "typescript": "4.5.5"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@amollo-kit/components-override",
-  "scopeCommitName": "@helpers/c_override",
+  "scopeCommitName": "helpers/c_override",
   "version": "0.1.0",
   "license": "MIT",
   "description": "",

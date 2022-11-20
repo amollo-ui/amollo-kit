@@ -23,14 +23,14 @@
     "packages": [
       "packages/*",
       "packages/@helpers/*",
-      "workspace/*",
-      "workspace/@wiki/*"
+      "ws/*",
+      "ws/@wiki/*"
     ]
   },
   "installConfig": {
     "hoistingLimits": [
-      "workspace/*",
-      "workspace/@wiki/*"
+      "ws/*",
+      "ws/@wiki/*"
     ]
   },
   "config": {

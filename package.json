@@ -39,9 +39,9 @@
     }
   },
   "scripts": {
-    "prepare": "husky install",
-    "lint": "yarn workspaces foreach -pt run lint",
-    "versionup": "sh ./shell/versionup"
+    "lint": "yarn workspaces foreach -p run lint",
+    "fix": "yarn workspaces foreach -p run fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@amollo-lint/commitlint-plugin-card-id": "^1.3.0",

@@ -310,6 +310,9 @@ fabric.properties
 !.yarn/sdks
 !.yarn/versions
 
+# build output
+build
+
 # if you are NOT using Zero-installs, then:
 # comment the following lines
 # !.yarn/cache

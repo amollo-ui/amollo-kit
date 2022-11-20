@@ -1,6 +1,6 @@
 {
   "name": "@amollo-kit/components-override",
-  "scopeCommitName": "helpers/c_override",
+  "scopeCommitName": "h:covr",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Reusable react components with the overrides pattern",

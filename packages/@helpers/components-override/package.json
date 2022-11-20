@@ -42,9 +42,10 @@
     "react": ">=16.x"
   },
   "devDependencies": {
-    "@amollo-lint/eslint-config-ts": "^2.1.0",
+    "@amollo-lint/eslint-config-ts-prettier": "^0.1.2",
     "@types/react": "^17.0.39",
     "eslint": "^8.10.0",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "tsdx": "^0.14.1",
     "typescript": "4.5.5"

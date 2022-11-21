@@ -1,17 +1,20 @@
 {
-  "include": ["./lib/**/*.*"],
+  "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true,
-    "module": "esnext",
-    "sourceMap": true,
-    "outDir": "dist",
-    "target": "es5",
     "baseUrl": ".",
-    "declarationDir": "dist/@types"
-  }
+    "incremental": false,
+    "inlineSourceMap": false,
+    "sourceMap": false,
+    "outDir": "build/main",
+    "rootDirs": ["lib"],
+    "resolveJsonModule": false,
+    "module": "UMD",
+    "declaration": true,
+    "lib": ["es2017"],
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "skipLibCheck": true
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules/**"]
 }

@@ -15,7 +15,8 @@
     "react-override"
   ],
   "files": [
-    "dist"
+    "build",
+    "CHANGELOG.md"
   ],
   "main": "build/main/index.js",
   "module": "build/module/index.js",

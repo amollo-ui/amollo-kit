@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/amollo-ui/amollo-kit/compare/@amollo-kit/components-override@1.0.1...@amollo-kit/components-override@1.0.2) (2022-11-24)
+
+
+### Bug Fixes
+
+* **h:covr:** |c-gaFjc2kt| correct the folder name for the assembly in the files ([812bf57](https://github.com/amollo-ui/amollo-kit/commit/812bf57d7438743b8a16a6c478f0217887ccecc7))
+
+
+
+
+
 ## [1.0.1](https://github.com/amollo-ui/amollo-kit/compare/@amollo-kit/components-override@1.0.0...@amollo-kit/components-override@1.0.1) (2022-11-24)
 
 

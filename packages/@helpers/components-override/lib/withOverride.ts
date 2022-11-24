@@ -28,7 +28,7 @@ import type {
  *  - **props** - returns the parameters that were predefined
  */
 export const getComponentsWithOverride = <
-    D extends { [key: string]: ComponentType<any> }, // eslint-disable-line @typescript-eslint/no-explicit-any
+    D extends { [key: string]: ComponentType<Record<string, unknown>> },
     T extends ExtractOverrideProps<D>
 >(
     defaultComponents: D,

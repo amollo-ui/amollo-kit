@@ -10,21 +10,26 @@ type GetComponentProps<T, W = never> = T extends
 
 export type ExtractOverrideReturn<
     T extends ExtractOverrideProps<D>,
-    D extends { [key: string]: ComponentType<unknown> }
+    D extends { [key: string]: ComponentType<Record<string, unknown>> }
 > = {
     [K in keyof D]: {
         "component": ComponentInferType<D[K]>;
-        "props": GetComponentProps<T[K], unknown>;
+        "props": GetComponentProps<
+            T[K],
+            Record<string, unknown>
+        > extends Record<string, unknown>
+            ? GetComponentProps<T[K], Record<string, unknown>>
+            : never;
     };
 };
 
 export type ExtractOverrideProps<
-    D extends { [key: string]: ComponentType<unknown> }
+    D extends { [key: string]: ComponentType<Record<string, unknown>> }
 > = {
     [K in keyof D]+?: {
-        "component"?: ComponentType<unknown>;
+        "component"?: ComponentType<Record<string, unknown>>;
         "props"?: ExtractOverrideProps<D>[K] extends {
-            "component": ComponentType<unknown>;
+            "component": ComponentType<Record<string, unknown>>;
         }
             ? GetComponentProps<ExtractOverrideProps<D>[K]["component"]>
             : GetComponentProps<D[K]>;
@@ -33,7 +38,7 @@ export type ExtractOverrideProps<
 
 export interface IOverrideInstance<
     T extends ExtractOverrideProps<D>,
-    D extends { [key: string]: ComponentType<any> }, // eslint-disable-line @typescript-eslint/no-explicit-any
+    D extends { [key: string]: ComponentType<Record<string, unknown>> },
     K extends keyof T
 > {
     component?: K extends keyof D ? ComponentInferType<T[K]> : never;
@@ -46,7 +51,7 @@ export interface IOverrideInstance<
 
 export type Override<
     T extends ExtractOverrideProps<D>,
-    D extends { [key: string]: ComponentType<any> } // eslint-disable-line @typescript-eslint/no-explicit-any
+    D extends { [key: string]: ComponentType<Record<string, unknown>> }
 > = {
     [K in keyof T]+?: K extends keyof D
         ? D[K] extends undefined

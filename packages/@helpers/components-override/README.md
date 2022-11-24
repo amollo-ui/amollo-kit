@@ -36,14 +36,14 @@ import * as defaultComponents from "./components";
 
 type DefaultComponentsType = typeof defaultComponents;
 
-export interface BoxInputProps<T> {
+export interface BoxInputProps<T extends Record<string, unknown>> {
     overrides: Override<T, DefaultComponentsType>;
 }
 
 /**
  * @description must be a generic component
  */
-const BoxInput = <T extends object>({
+const BoxInput = <T extends Record<string, unknown>>({
     overrides,
 }: BoxInputProps<T>) => {
     ....

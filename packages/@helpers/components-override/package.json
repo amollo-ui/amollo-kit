@@ -1,7 +1,7 @@
 {
   "name": "@amollo-kit/components-override",
-  "scopeCommitName": "helpers/c_override",
-  "version": "1.0.0",
+  "scopeCommitName": "h:covr",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Reusable react components with the overrides pattern",
   "author": {
@@ -17,10 +17,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
-  "module": "dist/components-override.esm.js",
-  "browser": "dist/components-override.esm.js",
-  "types": "dist/@types/index.d.ts",
+  "main": "build/main/index.js",
+  "module": "build/module/index.js",
+  "types": "build/module/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -33,18 +32,27 @@
     "url": "git@github.com:amollo-ui/amollo-kit.git"
   },
   "scripts": {
-    "lint": "eslint \"./**/*.{js,ts,jsx,tsx}\"",
-    "lint:fix": "yarn lint --fix",
-    "prepublishOnly": "yarn lint:fix && yarn lint && yarn build",
-    "build": "rimraf dist && tsdx build --format es,cjs --entry lib/index.ts"
+    "build": "rimraf build && run-p build:main build:module",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.json --target 'esnext' --outDir 'build/module' --module esnext",
+    "watch:build": "tsc -p tsconfig.json --incremental --inlineSourceMap -w",
+    "prepublishOnly": "run-s fix lint build",
+    "_________________________ lint _________________________": "______",
+    "lint:js": "eslint \"lib/**/*.{ts,tsx}\"",
+    "fix:js": "yarn lint:js --fix",
+    "lint": "run-s lint:js tsc:check",
+    "fix": "yarn fix:js",
+    "tsc:check": "tsc -v && tsc --noEmit"
   },
   "peerDependencies": {
     "react": ">=16.x"
   },
   "devDependencies": {
-    "@amollo-lint/eslint-config-ts": "^2.1.0",
+    "@amollo-lint/eslint-config-ts-prettier": "^0.1.2",
     "@types/react": "^17.0.39",
     "eslint": "^8.10.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "tsdx": "^0.14.1",
     "typescript": "4.5.5"

@@ -41,6 +41,7 @@
   "scripts": {
     "lint": "yarn workspaces foreach -p run lint",
     "fix": "yarn workspaces foreach -p run fix",
+    "version-up": "sh ./shell/version-up.sh",
     "prepare": "husky install"
   },
   "devDependencies": {
